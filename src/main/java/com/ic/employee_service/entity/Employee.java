@@ -21,9 +21,8 @@ import java.util.UUID;
 public class Employee {
 
     @Id
-    @GeneratedValue(generator = "uuid2")
-    @GenericGenerator(name = "uuid2", strategy = "org.hibernate.id.UUIDGenerator")
-    @Column(name = "emp_id", updatable = false, nullable = false)
+    @GeneratedValue(strategy = GenerationType.UUID)
+    @Column(name = "emp_id", nullable = false, updatable = false)
     private UUID empId;
 
     @Column(nullable = false)
