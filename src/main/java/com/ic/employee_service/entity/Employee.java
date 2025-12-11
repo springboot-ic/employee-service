@@ -47,4 +47,3 @@ public class Employee {
     @Column(nullable = false)
     private EmployeeStatus status;
 }
-
