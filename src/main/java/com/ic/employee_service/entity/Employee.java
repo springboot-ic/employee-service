@@ -12,9 +12,8 @@ import java.math.BigDecimal;
 import java.util.UUID;
 
 @Entity
+@Data
 @Table(name = "employees")
-@Getter
-@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder

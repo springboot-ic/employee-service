@@ -2,6 +2,8 @@ package com.ic.employee_service.repository;
 
 import com.ic.employee_service.entity.Employee;
 import com.ic.employee_service.enums.EmployeeStatus;
+import com.ic.employee_service.enums.Department;
+import com.ic.employee_service.enums.Designation;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -15,9 +17,9 @@ public interface EmployeeRepository extends JpaRepository<Employee, UUID> {
     List<Employee> findByStatus(EmployeeStatus status);
 
     // Search by department
-    List<Employee> findByDepartment(com.ic.employee_service.enums.Department department);
+    List<Employee> findByDepartment(Department  department);
 
     // Search by designation
-    List<Employee> findByDesignation(com.ic.employee_service.enums.Designation designation);
+    List<Employee> findByDesignation( Designation designation);
 }
 
