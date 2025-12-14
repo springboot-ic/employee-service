@@ -3,9 +3,9 @@ spring:
     name: employee-service
   
   datasource:
-    url: jdbc:postgresql://ic-pg-suveemo-backend.g.aivencloud.com:16255/defaultdb?sslmode=require
-    username: avnadmin
-    password: AVNS_RVCoXOLEqRwt4miw5gR
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
     driver-class-name: org.postgresql.Driver
   
   jpa:

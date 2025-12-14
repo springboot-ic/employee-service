@@ -18,7 +18,7 @@ import java.util.UUID;
 @RequiredArgsConstructor
 public class EmployeeService {
 
-    private final EmployeeRepository employeeRepository;
+    private final EmployeeRepository employeeRepository; //Tool to talk to the database
 
     // CREATE
     public EmployeeResponseDTO createEmployee(EmployeeRequestDTO dto) {
