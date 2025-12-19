@@ -13,6 +13,8 @@ import java.util.UUID;
 @Repository
 public interface EmployeeRepository extends JpaRepository<Employee, UUID> {
 
+
+
     // Fetch active employees
     List<Employee> findByStatus(EmployeeStatus status);
 
