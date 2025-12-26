@@ -12,6 +12,7 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -19,11 +20,11 @@ import java.util.UUID;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/employees")
+@RequestMapping("/api/employees")
 public class EmployeeController {
 
     private final EmployeeService employeeService;
-
+    @PreAuthorize("hasAnyRole('ADMIN','MANAGER')")
     @GetMapping("/pagination")
     public ResponseEntity<Page<EmployeeResponseDTO>> getEmployeesByPagination(
             @RequestParam(defaultValue = "0") int page,
@@ -38,12 +39,14 @@ public class EmployeeController {
     }
 
     // CREATE Employee
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping
     public ResponseEntity<EmployeeResponseDTO> create(@Valid @RequestBody EmployeeRequestDTO dto) {
         return ResponseEntity.ok(employeeService.createEmployee(dto));
     }
 
     // GET all
+    @PreAuthorize("hasAnyRole('ADMIN','MANAGER')")
     @GetMapping
     public ResponseEntity<List<EmployeeResponseDTO>> getAll() {
         return ResponseEntity.ok(employeeService.getAllEmployees());
