@@ -15,13 +15,13 @@ public interface EmployeeRepository extends JpaRepository<Employee, UUID> {
 
 
 
-    // Fetch active employees
-    List<Employee> findByStatus(EmployeeStatus status);
-
-    // Search by department
-    List<Employee> findByDepartment(Department  department);
-
-    // Search by designation
-    List<Employee> findByDesignation( Designation designation);
+//    // Fetch active employees
+//    List<Employee> findByStatus(EmployeeStatus status);
+//
+//    // Search by department
+//    List<Employee> findByDepartment(Department  department);
+//
+//    // Search by designation
+//    List<Employee> findByDesignation( Designation designation);
 }
 
