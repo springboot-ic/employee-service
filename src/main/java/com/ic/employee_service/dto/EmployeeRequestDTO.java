@@ -32,4 +32,5 @@ public class EmployeeRequestDTO {
 
     @NotNull(message = "Status is required")
     private EmployeeStatus status;
+
 }
